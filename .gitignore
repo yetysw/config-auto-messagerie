@@ -1,0 +1,20 @@
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies and tooling
+node_modules/
+npm-debug.log*
+.claude/
+
+# Screenshots, scratch files, OS files
+*.png
+!docs/*.png
+!public/img/**/*.png
+captures/
+scratch/
+tmp/
+*.log
+.DS_Store
+Thumbs.db

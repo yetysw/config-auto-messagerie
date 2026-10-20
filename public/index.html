@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="fr-CH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Configurer ma messagerie</title>
+  <meta name="description" content="Configurez votre e-mail, votre calendrier et vos contacts sur PC, Mac, iPhone, iPad et Android, étape par étape.">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111318" media="(prefers-color-scheme: dark)">
+  <meta name="robots" content="noindex">
+  <meta name="referrer" content="no-referrer">
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+  <link rel="stylesheet" href="/brand.css">
+  <link rel="stylesheet" href="/css/app.css">
+  <script type="module" src="/js/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#/" aria-label="Recommencer la configuration">
+        <img class="brand-logo js-brand-logo" alt="" hidden>
+        <span class="brand-mark js-brand-mark" aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+        <span class="brand-name js-brand-name">Mail Setup</span>
+      </a>
+      <nav class="header-nav" aria-label="Outils">
+        <button type="button" class="icon-btn" data-panel="panel-help" aria-haspopup="dialog">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2.2-2.4 3.6M12 17h.01"/></svg>
+          <span>Aide</span>
+        </button>
+        <button type="button" class="icon-btn" data-panel="panel-params" aria-haspopup="dialog">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+          <span>Paramètres</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- Étape 1 : adresse -->
+    <section class="home" id="view-home" aria-labelledby="home-title">
+      <div class="container narrow">
+        <form class="card start-card" id="start-form" novalidate autocomplete="on">
+          <h1 id="home-title" tabindex="-1">Configurons votre messagerie</h1>
+          <p class="card-sub">Indiquez votre adresse e-mail. Nous vous guidons ensuite pas à pas.</p>
+          <div class="field">
+            <label for="email">Votre adresse e-mail</label>
+            <input id="email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="prenom.nom@example.com" required aria-describedby="email-error">
+            <p class="field-error" id="email-error" role="alert" hidden></p>
+          </div>
+          <details class="name-opt" id="name-opt">
+            <summary>Ajouter votre nom <span class="optional">(facultatif)</span></summary>
+            <div class="field">
+              <label for="name">Nom affiché</label>
+              <input id="name" name="name" type="text" autocomplete="name" maxlength="80" placeholder="Prénom Nom" aria-describedby="name-help">
+              <p class="field-help" id="name-help">Le nom que vos destinataires verront.</p>
+            </div>
+          </details>
+          <button class="btn btn-primary btn-block" type="submit">
+            Continuer
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="privacy-note">Aucun mot de passe demandé. Rien n’est enregistré.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Étapes 2 à 4 -->
+    <section class="wizard" id="view-wizard" hidden>
+      <div class="container narrow">
+        <div class="wizard-top">
+          <ol class="stepper" id="stepper" aria-label="Étapes">
+            <li data-step="1"><a href="#/"><span>1</span><em>Adresse</em></a></li>
+            <li data-step="2"><a href="#/appareil"><span>2</span><em>Appareil</em></a></li>
+            <li data-step="3"><a href="#/appareil" id="step3-link"><span>3</span><em>Application</em></a></li>
+            <li data-step="4"><a><span>4</span><em>Configuration</em></a></li>
+          </ol>
+          <p class="who"><span class="who-email" id="who-email"></span> <a class="who-edit" href="#/">Modifier</a></p>
+        </div>
+        <div id="view" class="view"></div>
+      </div>
+    </section>
+
+    <noscript>
+      <div class="container narrow"><p class="card noscript">Ce configurateur a besoin de JavaScript. Activez-le dans votre navigateur, ou contactez votre support.</p></div>
+    </noscript>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="js-org"></span>
+      <a class="js-support-phone" href="#" hidden></a>
+      <a class="js-support-email" href="#" hidden></a>
+      <span class="footer-note">Aucun cookie, aucun suivi</span>
+    </div>
+  </footer>
+
+  <!-- Panneau : paramètres manuels -->
+  <dialog class="panel" id="panel-params" aria-labelledby="params-title">
+    <div class="panel-head">
+      <h2 id="params-title">Paramètres manuels</h2>
+      <button type="button" class="panel-close" data-close aria-label="Fermer">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="panel-body">
+      <p class="panel-lead" id="params-lead">Pour les utilisateurs avertis. Le guide pas à pas vous indique déjà ces valeurs au bon moment.</p>
+      <div id="params" class="params"></div>
+    </div>
+  </dialog>
+
+  <!-- Panneau : aide -->
+  <dialog class="panel" id="panel-help" aria-labelledby="help-title">
+    <div class="panel-head">
+      <h2 id="help-title">Besoin d’aide&nbsp;?</h2>
+      <button type="button" class="panel-close" data-close aria-label="Fermer">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="panel-body">
+      <div class="support-box" id="support-box" hidden>
+        <p>Notre équipe vous aide volontiers, à distance ou sur place.</p>
+        <div class="support-lines">
+          <a class="support-line" id="support-phone" href="#" hidden>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <span></span>
+          </a>
+          <a class="support-line" id="support-email" href="#" hidden>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <span></span>
+          </a>
+        </div>
+        <p class="support-hours" id="support-hours" hidden></p>
+        <p class="support-address" id="support-address" hidden></p>
+      </div>
+      <h3 class="faq-title">Questions fréquentes</h3>
+      <div class="faq" id="faq">
+        <details>
+          <summary>Mon mot de passe est refusé</summary>
+          <div class="faq-body">
+            <p>Vérifiez que l'<strong>identifiant est l'adresse e-mail complète</strong> (par ex. <em>jean@example.com</em>, pas seulement <em>jean</em>) et que le mot de passe est saisi sans espace, en respectant les majuscules.</p>
+            <p>Testez-le sur le <a class="js-webmail" href="#" rel="noopener">webmail</a> : s'il y est refusé aussi, contactez-nous pour le réinitialiser. Après plusieurs échecs, le compte peut être bloqué temporairement : patientez 15 minutes.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Un avertissement de certificat apparaît</summary>
+          <div class="faq-body">
+            <p>Le nom du serveur doit être exactement <strong class="js-imap-host">mail.example.com</strong> : n'utilisez pas <em>mail.votre-domaine.com</em>, le certificat ne correspondrait pas.</p>
+            <p>Vérifiez aussi la date et l'heure de l'appareil. N'acceptez jamais un certificat inconnu : contactez-nous plutôt.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Je reçois des messages mais l'envoi échoue</summary>
+          <div class="faq-body">
+            <p>Contrôlez le serveur d'envoi (SMTP) : <strong class="js-smtp">mail.example.com, port 465, SSL/TLS</strong>, <strong>authentification activée</strong> avec les mêmes identifiants que la réception.</p>
+            <p>Évitez le port 25, souvent bloqué par les fournisseurs d'accès. Si le port 465 est bloqué sur votre réseau, essayez le port <strong>587</strong> avec la sécurité <strong>STARTTLS</strong>. Sur iPhone, ouvrez le compte, touchez « SMTP » et vérifiez que le serveur principal est activé.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Le calendrier ou les contacts ne se synchronisent pas</summary>
+          <div class="faq-body">
+            <p>Vérifiez l'adresse (avec <strong>https://</strong>) et l'identifiant : l'<strong>adresse e-mail complète</strong>, jamais la partie avant le « @ » seule. Sur Android, autorisez DAVx5 à accéder au calendrier et aux contacts, et désactivez l'optimisation de la batterie pour DAVx5.</p>
+            <p>Dans Outlook, seul l'<strong>Outlook classique</strong> avec CalDAV Synchronizer synchronise le calendrier. Le nouvel Outlook ne le permet pas.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Je ne vois pas certains dossiers (envoyés, brouillons…)</summary>
+          <div class="faq-body">
+            <p>Une boîte neuve ne contient que la boîte de réception et le dossier des indésirables. Votre logiciel de messagerie crée automatiquement les autres dossiers à la première utilisation (premier envoi, premier brouillon…).</p>
+          </div>
+        </details>
+        <details data-preset="mdaemon">
+          <summary>Ajouter l'agenda ou les contacts partagés de mon entreprise</summary>
+          <div class="faq-body">
+            <p>Les ressources communes de votre domaine (« [Public] - votre-domaine/Calendrier », « [Public] - votre-domaine/Tâches », « [Public] Contacts ») apparaissent automatiquement sur iPhone, iPad, Mac et dans DAVx⁵ sur Android : il suffit de les cocher dans la liste des agendas ou des carnets.</p>
+            <p>Dans Outlook (CalDAV Synchronizer) ou Thunderbird, utilisez l'adresse de découverte <strong class="js-dav-discovery">https://mail.example.com/.well-known/caldav</strong> pour les retrouver.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Le profil ne s'installe pas sur iPhone ou iPad</summary>
+          <div class="faq-body">
+            <p>Ouvrez cette page dans <strong>Safari</strong>, puis installez le profil dans les <strong>8 minutes</strong> qui suivent le téléchargement. Passé ce délai, iOS le supprime : téléchargez-le à nouveau.</p>
+            <p>Si un ancien profil <span class="js-brand-name">Mail Setup</span> existe déjà, supprimez-le d'abord dans Réglages › Général › VPN et gestion de l'appareil.</p>
+          </div>
+        </details>
+      </div>
+      <p class="panel-foot"><a class="js-webmail" href="#" rel="noopener">Ouvrir le webmail</a></p>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

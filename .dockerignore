@@ -1,0 +1,12 @@
+.git
+node_modules
+*.md
+docs
+LICENSE
+docker-compose.yml
+Dockerfile
+.dockerignore
+.gitignore
+.env
+.env.*
+.claude

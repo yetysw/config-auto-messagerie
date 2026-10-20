@@ -1,0 +1,67 @@
+# Mail / calendar / contacts setup assistant.
+# All settings come from environment variables: put them in a `.env` file next to this
+# file (see .env.example), then run: docker compose up -d
+# Empty or unset values fall back to the neutral defaults built into server/config.js.
+services:
+  mail-setup:
+    build: .
+    image: ${IMAGE_NAME:-mail-setup}:latest
+    container_name: ${CONTAINER_NAME:-mail-setup}
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT:-8080}:8080"
+    environment:
+      # Branding
+      BRAND_NAME: "${BRAND_NAME:-}"
+      BRAND_LOGO_URL: "${BRAND_LOGO_URL:-}"
+      BRAND_ACCENT: "${BRAND_ACCENT:-}"
+      # Mail servers (MAIL_HOST is the default for every host below)
+      MAIL_HOST: "${MAIL_HOST:-}"
+      IMAP_HOST: "${IMAP_HOST:-}"
+      IMAP_PORT: "${IMAP_PORT:-}"
+      IMAP_SECURITY: "${IMAP_SECURITY:-}"
+      SMTP_HOST: "${SMTP_HOST:-}"
+      SMTP_PORT: "${SMTP_PORT:-}"
+      SMTP_SECURITY: "${SMTP_SECURITY:-}"
+      WEBMAIL_URL: "${WEBMAIL_URL:-}"
+      # Calendar / contacts (DAV_PRESET: mdaemon | generic)
+      DAV_PRESET: "${DAV_PRESET:-}"
+      DAV_BASE_URL: "${DAV_BASE_URL:-}"
+      CALDAV_URL: "${CALDAV_URL:-}"
+      CARDDAV_URL: "${CARDDAV_URL:-}"
+      TASKS_URL: "${TASKS_URL:-}"
+      DAV_DISCOVERY_URL: "${DAV_DISCOVERY_URL:-}"
+      DAV_CARD_DISCOVERY_URL: "${DAV_CARD_DISCOVERY_URL:-}"
+      DAV_PRINCIPAL_URL_TEMPLATE: "${DAV_PRINCIPAL_URL_TEMPLATE:-}"
+      DAV_CALENDAR_URL_TEMPLATE: "${DAV_CALENDAR_URL_TEMPLATE:-}"
+      DAV_TASKS_URL_TEMPLATE: "${DAV_TASKS_URL_TEMPLATE:-}"
+      DAV_CONTACTS_URL_TEMPLATE: "${DAV_CONTACTS_URL_TEMPLATE:-}"
+      # Public address of this app (links and QR codes)
+      PUBLIC_URL: "${PUBLIC_URL:-}"
+      # Support contact shown to users (all optional, hidden when empty)
+      SUPPORT_PHONE: "${SUPPORT_PHONE:-}"
+      SUPPORT_EMAIL: "${SUPPORT_EMAIL:-}"
+      SUPPORT_HOURS: "${SUPPORT_HOURS:-}"
+      SUPPORT_ADDRESS: "${SUPPORT_ADDRESS:-}"
+      # Internal /support page (empty password = page disabled)
+      SUPPORT_USER: "${SUPPORT_USER:-}"
+      SUPPORT_PASSWORD: "${SUPPORT_PASSWORD:-}"
+      # Apple configuration profile
+      PROFILE_ORGANIZATION: "${PROFILE_ORGANIZATION:-}"
+      PROFILE_ID_PREFIX: "${PROFILE_ID_PREFIX:-}"
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/healthz"]
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "2"
